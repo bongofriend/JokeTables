@@ -16,3 +16,20 @@ CREATE TABLE `Jokes` (
   KEY `username` (`username`),
   CONSTRAINT `Jokes_ibfk_1` FOREIGN KEY (`username`) REFERENCES `Users` (`UName`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1
+
+CREATE TABLE `Votes` (
+  `voteid` int(11) NOT NULL AUTO_INCREMENT,
+  `jokeid` int(11) DEFAULT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  `votetype` varchar(4) DEFAULT NULL,
+  PRIMARY KEY (`voteid`),
+  KEY `jokeid` (`jokeid`),
+  CONSTRAINT `Votes_ibfk_1` FOREIGN KEY (`jokeid`) REFERENCES `Jokes` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1
+
+
+CREATE TABLE `Categories` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1
