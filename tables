@@ -15,7 +15,6 @@ CREATE TABLE `Jokes` (
   PRIMARY KEY (`id`),
   KEY `username` (`username`),
   KEY `category` (`category`),
-  CONSTRAINT `Jokes_ibfk_1` FOREIGN KEY (`username`) REFERENCES `Users` (`UName`),
   CONSTRAINT `Jokes_ibfk_2` FOREIGN KEY (`category`) REFERENCES `Categories` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1
 
